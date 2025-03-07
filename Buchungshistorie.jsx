@@ -1,6 +1,7 @@
 // src/pages/Buchungshistorie.jsx
 import React, { useState, useEffect, useMemo } from "react";
 import { format, parseISO, isAfter, isBefore } from "date-fns";
+import ThColumn from "../components/ThColumn";
 import {
   ResponsiveContainer,
   BarChart,
@@ -207,11 +208,11 @@ const Buchungshistorie = () => {
           <table className="w-full text-left">
             <thead className="bg-gray-600">
               <tr>
-                <ThColumn label="Datum/Uhrzeit" sortKey="date" sortKeyState={{ sortKey, sortOrder }} onSort={handleSort} />
-                <ThColumn label="Art der Buchung" sortKey="bookingType" sortKeyState={{ sortKey, sortOrder }} onSort={handleSort} />
-                <ThColumn label="Benutzer" sortKey="user" sortKeyState={{ sortKey, sortOrder }} onSort={handleSort} />
-                <ThColumn label="Artikel" sortKey="article" sortKeyState={{ sortKey, sortOrder }} onSort={handleSort} />
-                <ThColumn label="Menge" sortKey="quantity" sortKeyState={{ sortKey, sortOrder }} onSort={handleSort} />
+                <ThColumn label="Datum/Uhrzeit" sortKey="date" sortState={{ sortKey, sortOrder }} onSort={handleSort} />
+                <ThColumn label="Art der Buchung" sortKey="bookingType" sortState={{ sortKey, sortOrder }} onSort={handleSort} />
+                <ThColumn label="Benutzer" sortKey="user" sortState={{ sortKey, sortOrder }} onSort={handleSort} />
+                <ThColumn label="Artikel" sortKey="article" sortState={{ sortKey, sortOrder }} onSort={handleSort} />
+                <ThColumn label="Menge" sortKey="quantity" sortState={{ sortKey, sortOrder }} onSort={handleSort} />
               </tr>
             </thead>
             <tbody>
@@ -320,4 +321,4 @@ const Buchungshistorie = () => {
   );
 };
 
-export default Wareneingang;
+export default Buchungshistorie;
